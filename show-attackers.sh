@@ -1,5 +1,19 @@
 #!/bin/bash
 
+#===============================================================================
+#
+#          FILE: show-attackers.sh
+# 
+#      
+#   DESCRIPTION: This script show Intents intrussion, IP and from.
+#        AUTHOR: Manel  Ferrer
+#  ORGANIZATION: INS Pedralbes
+#       CREATED: 05/12/2020
+#      REVISION:  ---
+#	GitHub: https://github.com/Many-ip/Practica-19
+#===============================================================================
+
+
 #Mensaje de error
 error() {
 echo "Cannot open log file: $1"
@@ -45,6 +59,7 @@ else
 		#mostramos la informacion:
 		#intentos, IP, Pais
 		echo "$count_failed,$i,$(geoiplookup $i | cut -d " " -f 5-6)"
+		#Ponemos el valor a 1 porque la siguiente iteración es los intetnos de intrusión
 		is_count=1
 		fi
 	done
